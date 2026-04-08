@@ -8,9 +8,10 @@ const USER_IP = 'http://172.16.52.128'
 // 1. User Service (Port 8081) [cite: 80, 81]
 export const userApi = axios.create({ baseURL: `${USER_IP}:8081` });
 export const userService = {
-  login: (data) => userApi.post('/login', data), // [cite: 46]
-  register: (data) => userApi.post('/register', data), // [cite: 45]
-  getUsers: () => userApi.get('api/users'), // [cite: 47]
+  // Thêm /api/users/ vào đường dẫn
+  login: (data) => userApi.post('/api/users/login', data), 
+  register: (data) => userApi.post('/api/users/register', data),
+  getUsers: () => userApi.get('/api/users'), 
 };
 
 // 2. Food Service (Port 8082) [cite: 82, 83]
