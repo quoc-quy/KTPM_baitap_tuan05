@@ -1,0 +1,16 @@
+server:
+  port: 8081  # Cổng ứng dụng
+
+spring:
+  # MongoDB
+  data:
+    mongodb:
+      uri: mongodb+srv://nguyen:Pvn112345@cluster0.rnxpddi.mongodb.net/mydatabase
+  # H2 Database (in-memory, dùng cho JPA nếu cần)
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+  h2:
+    console:
+      enabled: true  # Bật console H2 trên /h2-console
